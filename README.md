@@ -1,2 +1,3 @@
 # RiddlezWebApp
-# Web application to find and play with riddles. Enjoy !
+# Web application to create a list of riddles with answers.
+# Use of C#, ASP.NET, HTML, CSS
