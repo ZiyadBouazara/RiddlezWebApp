@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using RiddlezWebApp.Models;
 
 namespace RiddlezWebApp.Data
 {
@@ -9,5 +10,6 @@ namespace RiddlezWebApp.Data
             : base(options)
         {
         }
+        public DbSet<RiddlezWebApp.Models.Riddle> Riddle { get; set; }
     }
 }
