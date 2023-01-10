@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -56,6 +57,8 @@ namespace RiddlezWebApp.Controllers
         }
 
         // GET: Riddles/Create
+
+        [Authorize]
         public IActionResult Create()
         {
             return View();
@@ -64,6 +67,7 @@ namespace RiddlezWebApp.Controllers
         // POST: Riddles/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [Authorize]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("ID,RiddleQuestion,RiddleAnswer")] Riddle riddle)
@@ -78,6 +82,7 @@ namespace RiddlezWebApp.Controllers
         }
 
         // GET: Riddles/Edit/5
+        [Authorize]
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null || _context.Riddle == null)
@@ -96,6 +101,7 @@ namespace RiddlezWebApp.Controllers
         // POST: Riddles/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [Authorize]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("ID,RiddleQuestion,RiddleAnswer")] Riddle riddle)
@@ -129,6 +135,7 @@ namespace RiddlezWebApp.Controllers
         }
 
         // GET: Riddles/Delete/5
+        [Authorize]
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null || _context.Riddle == null)
@@ -147,6 +154,7 @@ namespace RiddlezWebApp.Controllers
         }
 
         // POST: Riddles/Delete/5
+        [Authorize]
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)

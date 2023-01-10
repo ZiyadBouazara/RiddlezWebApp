@@ -15,9 +15,7 @@
             <th>
                 @Html.DisplayNameFor(model => model.RiddleQuestion)
             </th>
-            <th>
-                @Html.DisplayNameFor(model => model.RiddleAnswer)
-            </th>
+
             <th></th>
         </tr>
     </thead>
@@ -27,12 +25,10 @@
             <td>
                 @Html.DisplayFor(modelItem => item.RiddleQuestion)
             </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.RiddleAnswer)
-            </td>
+
             <td>
                 <a asp-action="Edit" asp-route-id="@item.ID">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.ID">Details</a> |
+                <a asp-action="Details" asp-route-id="@item.ID">Answer</a> |
                 <a asp-action="Delete" asp-route-id="@item.ID">Delete</a>
             </td>
         </tr>
